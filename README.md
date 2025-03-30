@@ -1,11 +1,13 @@
 # Options Analysis Tool
 
-A Python-based tool for analyzing options using the Black-Scholes model and providing trading recommendations based on various metrics.
+A Python-based tool for analyzing options using both Black-Scholes (European) and Binomial Tree (American) models, providing trading recommendations based on various metrics.
 
 ## Features
 
 - Real-time options data fetching using yfinance
-- Black-Scholes model implementation for theoretical pricing
+- Support for both European and American options
+- Black-Scholes model implementation for European options
+- Binomial Tree model implementation for American options
 - Greeks calculation (Delta, Gamma, Theta, Vega, Rho)
 - Risk analysis and scoring
 - Automated recommendations based on multiple factors
@@ -32,18 +34,25 @@ poetry install
 
 ## Usage
 
-1. Run the script:
+The tool provides two separate scripts for analyzing European and American options:
+
+### European Options Analysis
 ```bash
-poetry run python Options_Pricing.py
+poetry run python European_Options_Pricing.py
 ```
 
-2. Enter the ticker symbol when prompted (e.g., AAPL, MSFT, GOOGL)
+### American Options Analysis
+```bash
+poetry run python American_Options_Pricing.py
+```
 
-3. Enter your mispricing threshold (e.g., 0.50 for $0.50)
+For both scripts:
+1. Enter the ticker symbol when prompted (e.g., AAPL, MSFT, GOOGL)
+2. Enter your mispricing threshold (e.g., 0.50 for $0.50)
 
 ## Output Explanation
 
-The script provides detailed analysis including:
+The scripts provide detailed analysis including:
 
 ### Basic Information
 - Current stock price
@@ -85,7 +94,7 @@ The script provides detailed analysis including:
 
 ## Important Notes
 
-1. The script uses historical volatility for calculations
+1. The scripts use historical volatility for calculations
 2. Risk-free rate is set to 5% (can be modified in the code)
 3. Recommendations are based on:
    - Price mispricing
