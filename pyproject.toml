@@ -9,8 +9,10 @@ packages = [{include = "python 3"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-yfinance = "^0.2.43"
+yfinance = "^0.2.55"
 pandas = "^2.2.3"
+numpy = "^2.2.4"
+scipy = "^1.15.2"
 
 
 [build-system]
